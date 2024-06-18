@@ -1,0 +1,34 @@
+Name     Bin2Hex ;
+PartNo   00 ;
+Date     6/16/2024 ;
+Revision 01 ;
+Designer MightyPEZ ;
+Company  MightyPEZ.com ;
+Assembly None ;
+Location RatLab ;
+Device   g22v10 ;
+
+/***************** INPUT PINS *********************/
+PIN 1    = a   ; /* Least Significant Byte - LSB  */ 
+PIN 2    = b   ; /*                               */ 
+PIN 3    = c   ; /*                               */ 
+PIN 4    = d   ; /* Most Significant Byte -  MSB  */ 
+
+/***************** OUTPUT PINS ********************/
+PIN 14    = OA ; /* Pin A                         */
+PIN 15    = OB ; /* Pin B                         */
+PIN 16    = OC ; /* Pin C                         */
+PIN 17    = OD ; /* Pin D                         */
+PIN 18    = OE ; /* Pin E                         */
+PIN 19    = OF ; /* Pin F                         */
+PIN 20    = OG ; /* Pin G                         */
+
+/****************** Boolean Logic *****************/
+OA = (!c & !a) # (!d & b) # (!d & c & a) # (d & !c & !b) # (d & !a) # (c & b);
+OB = (!d & !b & !a) # (!d & b & a) # (!c & !a) # (d & !b & a) # (!d & !c);
+OC = (!d & c) # (d & !c) # (!b & a) # (!d & !b) # (!d & a);
+OD = (c & !b & a) # (!d & !c & !a) # (!c & b & a) # (c & b & !a) # (d & !b);
+OE = (!c & !a) # (b & !a) # (d & b) # (d & c);
+OF = (!b & !a) # (!d & c & !b) # (c & !a) # (d & !c) # (d & b);
+OG = (!c & b) # (d & !c) # (!d & c & !b) # (b & !a) # (d & a);
+
