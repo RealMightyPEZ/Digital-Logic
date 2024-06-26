@@ -9,10 +9,10 @@ Location RatLab ;
 Device   g22v10 ;
 
 /***************** INPUT PINS *********************/
-PIN 1    = a   ; /* Least Significant Byte - LSB  */ 
+PIN 1    = a   ; /* Least Significant Bit - LSB  */ 
 PIN 2    = b   ; /*                               */ 
 PIN 3    = c   ; /*                               */ 
-PIN 4    = d   ; /* Most Significant Byte -  MSB  */ 
+PIN 4    = d   ; /* Most Significant Bit -  MSB  */ 
 
 /***************** OUTPUT PINS ********************/
 PIN 14    = OA ; /* Pin A                         */
