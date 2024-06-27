@@ -8,11 +8,17 @@ Assembly None ;
 Location RatLab ;
 Device   g22v10 ;
 
+/*  Bin2Hex example code for computing the segments necessary */
+/*  to drive a standard single digit 7 segment LED display    */
+/*  Input is 4 bit 0-15 Output is 1 HEX digit 0 - F           */
+/*  LED is common cathode                                     */
+/*  PLD is an Atmel ATF22v10                                  */
+
 /***************** INPUT PINS *********************/
-PIN 1    = a   ; /* Least Significant Bit - LSB  */ 
+PIN 1    = a   ; /* Least Significant Bit - LSB   */ 
 PIN 2    = b   ; /*                               */ 
 PIN 3    = c   ; /*                               */ 
-PIN 4    = d   ; /* Most Significant Bit -  MSB  */ 
+PIN 4    = d   ; /* Most Significant Bit -  MSB   */ 
 
 /***************** OUTPUT PINS ********************/
 PIN 14    = OA ; /* Pin A                         */
